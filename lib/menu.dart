@@ -103,8 +103,6 @@ class Durawa extends StatelessWidget {
                   color: Colors.white,
                 ),
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => QuranPage()));
                 },
               ),
             ),

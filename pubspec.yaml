@@ -78,7 +78,12 @@ flutter:
 
     - family: Source Sans Pro
       fonts:
-        - asset: fonts/SourceSansPro-Black.ttf  
+        - asset: fonts/SourceSansPro-Black.ttf 
+
+    - family: Quran
+      fonts:
+        - asset: fonts/quran.ttf   
+
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
