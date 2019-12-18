@@ -4,6 +4,28 @@ import 'easyBadgeCard.dart';
 import 'flags.dart';
 
 
+Card lokasiOnline() {
+  return Card(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+    child: Container(
+        padding: EdgeInsets.only(top: 70.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+          image: DecorationImage(
+            image: AssetImage('images/malaysiamap.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: EasyBadgeCard(
+          rightBadge: kalerTema,
+          title: 'Cari berdasarkan lokasi',
+          description: 'Sila pastikan mod lokasi anda diset kepada \"High Accuracy"',
+          suffixIcon: Icons.chevron_right,
+          suffixIconColor: Colors.green[500],
+        )),
+  );
+}
+
 Card johor() {
   return Card(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
@@ -19,7 +41,7 @@ Card johor() {
         child: EasyBadgeCard(
           rightBadge: johorColour,
           title: 'Johor',
-          description: '4 Zon',
+          description: '${kodjohor.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -41,7 +63,7 @@ Card kedah() {
         child: EasyBadgeCard(
           rightBadge: kedahColour,
           title: 'Kedah',
-          description: '7 Zon',
+          description: '${kodkedah.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -63,7 +85,7 @@ Card kelantan() {
         child: EasyBadgeCard(
           rightBadge: kelantanColour,
           title: 'Kelantan',
-          description: '3 Zon',
+          description: '${kodkelantan.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -85,7 +107,7 @@ Card melaka() {
         child: EasyBadgeCard(
           rightBadge: melakaColour,
           title: 'Melaka',
-          description: '1 Zon',
+          description: '${kodmelaka.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -107,7 +129,7 @@ Card negeriSembilan() {
         child: EasyBadgeCard(
           rightBadge: negeriSembilanColour,
           title: 'Negeri Sembilan',
-          description: '2 Zon',
+          description: '${kodn9.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -129,7 +151,7 @@ Card pahang() {
         child: EasyBadgeCard(
           rightBadge: pahangColour,
           title: 'Pahang',
-          description: '6 Zon',
+          description: '${kodpahang.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -150,7 +172,7 @@ Card penang() {
         ),
         child: EasyBadgeCard(
           rightBadge: penangColour,
-          title: 'Penang',
+          title: '${kodpenang.length} Kawasan',
           description: '1 Zon',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
@@ -173,7 +195,7 @@ Card perak() {
         child: EasyBadgeCard(
           rightBadge: perakColour,
           title: 'Perak',
-          description: '7 Zon',
+          description: '${kodperak.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -195,7 +217,7 @@ Card perlis() {
         child: EasyBadgeCard(
           rightBadge: perlisColour,
           title: 'Perlis',
-          description: '1 Zon',
+          description: '${kodperlis.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -217,7 +239,7 @@ Card sabah() {
         child: EasyBadgeCard(
           rightBadge: sabahColour,
           title: 'Sabah',
-          description: '9 Zon',
+          description: '${kodsabah.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -239,7 +261,7 @@ Card sarawak() {
         child: EasyBadgeCard(
           rightBadge: sarawakColour,
           title: 'Sarawak',
-          description: '9 Zon',
+          description: '${kodsarawak.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -260,8 +282,8 @@ Card selangor() {
         ),
         child: EasyBadgeCard(
           rightBadge: selangorColour,
-          title: 'Sabah',
-          description: '3 Zon',
+          title: 'Selangor',
+          description: '${kodselangor.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -283,7 +305,7 @@ Card terengganu() {
         child: EasyBadgeCard(
           rightBadge: terengganuColour,
           title: 'Terengganu',
-          description: '4 Zon',
+          description: '${kodterengganu.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -304,8 +326,8 @@ Card putrajaya() {
         ),
         child: EasyBadgeCard(
           rightBadge: putrajayaColour,
-          title: 'Putrajaya',
-          description: '1 Zon',
+          title: 'Wilayah Persekutuan Putrajaya',
+          description: '${kodputrajaya.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -326,8 +348,8 @@ Card kualalumpur() {
         ),
         child: EasyBadgeCard(
           rightBadge: kualaLumpurColour,
-          title: 'Kuala Lumpur',
-          description: '1 Zon',
+          title: 'Wilayah Persekutuan Kuala Lumpur',
+          description: '${kodkl.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),
@@ -348,8 +370,8 @@ Card labuan() {
         ),
         child: EasyBadgeCard(
           rightBadge: labuanColour,
-          title: 'Labuan',
-          description: '1 Zon',
+          title: 'Wilayah Persekutuan Labuan',
+          description: '${kodlabuan.length} Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),

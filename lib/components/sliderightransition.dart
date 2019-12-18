@@ -24,3 +24,4 @@ class SlideRightRoute extends PageRouteBuilder {
               ),
         );
 }
+

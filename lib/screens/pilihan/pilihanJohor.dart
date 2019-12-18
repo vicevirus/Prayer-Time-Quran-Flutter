@@ -1,114 +1,53 @@
-import 'package:flutter/material.dart';
-import 'package:waktusolatimprovised/components/constants.dart';
-import 'package:waktusolatimprovised/components/easyBadgeCard.dart';
-import 'package:waktusolatimprovised/menu.dart';
 
-import 'package:waktusolatimprovised/screens/loadingpages/loadingjohorsikitsikit.dart';
+import 'package:waktusolatimprovised/components/constants.dart';
+import 'package:flutter/material.dart';
+import 'package:waktusolatimprovised/menu.dart';
+import 'package:waktusolatimprovised/components/easyBadgeCard.dart';
 import 'package:waktusolatimprovised/components/sliderightransition.dart';
+import 'package:waktusolatimprovised/screens/loadingpages/loading.dart';
 
 class PilihanJohor extends StatefulWidget {
-  final data;
-
-  const PilihanJohor({Key key, this.data}) : super(key: key);
-
   @override
-  _PilihanJohorState createState() => _PilihanJohorState();
+  PilihanJohorState createState() => PilihanJohorState();
 }
 
-class _PilihanJohorState extends State<PilihanJohor> {
+class PilihanJohorState extends State<PilihanJohor> {
+
   @override
   Widget build(BuildContext context) {
-
     return WillPopScope(
       onWillPop: () {
         Navigator.pushReplacementNamed(context, '/');
       },
-      child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50.0),
-          child: MenuTitle(
-            title: 'Pilihan Kawasan',
-          ),
-        ),
-        drawer: Durawa(),
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                TempatPilihanJohor(
-                  tempat: 'Batu Pahat',
-                  page: LoadingJohorSikitSikit(
-                    tempatDipilih: kodjohor[0],
-                  ),
-                ),
-                TempatPilihanJohor(
-                  tempat: 'Gemas',
-                  page: LoadingJohorSikitSikit(
-                    tempatDipilih: kodjohor[1],
-                  ),
-                ),
-                TempatPilihanJohor(
-                  tempat: 'Johor Bahru',
-                  page: LoadingJohorSikitSikit(
-                    tempatDipilih: kodjohor[2],
-                  ),
-                ),
-                TempatPilihanJohor(
-                  tempat: 'Kluang',
-                  page: LoadingJohorSikitSikit(
-                    tempatDipilih: kodjohor[3],
-                  ),
-                ),
-                TempatPilihanJohor(
-                  tempat: 'Kota Tinggi',
-                  page: LoadingJohorSikitSikit(
-                    tempatDipilih: kodjohor[4],
-                  ),
-                ),
-                TempatPilihanJohor(
-                  page: LoadingJohorSikitSikit(
-                    tempatDipilih: kodjohor[5],
-                  ),
-                  tempat: 'Mersing',
-                ),
-                TempatPilihanJohor(
-                  page: LoadingJohorSikitSikit(
-                    tempatDipilih: kodjohor[6],
-                  ),
-                  tempat: 'Muar',
-                ),
-                TempatPilihanJohor(
-                  page: LoadingJohorSikitSikit(
-                    tempatDipilih: kodjohor[7],
-                  ),
-                  tempat: 'Pemanggil',
-                ),
-                TempatPilihanJohor(
-                  page: LoadingJohorSikitSikit(
-                    tempatDipilih: kodjohor[8],
-                  ),
-                  tempat: 'Pontian',
-                ),
-                TempatPilihanJohor(
-                  page: LoadingJohorSikitSikit(
-                    tempatDipilih: kodjohor[9],
-                  ),
-                  tempat: 'Pulau Aur',
-                ),
-                TempatPilihanJohor(
-                  page: LoadingJohorSikitSikit(
-                    tempatDipilih: kodjohor[10],
-                  ),
-                  tempat: 'Segamat',
-                ),
-              ],
+          child: Scaffold(
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(50.0),
+            child: MenuTitle(
+              title: 'Pilihan Kawasan',
             ),
           ),
-        ),
-      ),
+          drawer: Durawa(),
+          backgroundColor: kalerTema,
+          body: Container(
+            child: Center(
+              child: ListView.builder(
+                itemBuilder: (BuildContext context, int index) {
+                  return TempatPilihanJohor(
+                  tempat: '${lokasijohor[index]}',
+                  page: LoadingPage(
+                    tempatDipilih: kodjohor[index],
+                    nextroute: '/JohorPilihan',
+                  ),
+                  );
+                },
+                itemCount: lokasijohor.length,
+              ),
+            ),
+          )),
     );
   }
 }
+
 
 class TempatPilihanJohor extends StatelessWidget {
   final String tempat;
@@ -130,4 +69,3 @@ class TempatPilihanJohor extends StatelessWidget {
     );
   }
 }
-

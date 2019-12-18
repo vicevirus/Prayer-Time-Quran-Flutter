@@ -9,6 +9,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:dynamic_theme/theme_switcher_widgets.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class WaktuSolat extends StatelessWidget {
   @override
@@ -25,8 +26,6 @@ class WaktuSolatPage extends StatefulWidget {
 }
 
 class _WaktuSolatPageState extends State<WaktuSolatPage> {
-
-
   Position _currentPosition;
 
   getPrayerTimes() async {
@@ -45,6 +44,18 @@ class _WaktuSolatPageState extends State<WaktuSolatPage> {
 
   @override
   Widget build(BuildContext context) {
+DateTime currentBackPressTime;
+    Future<bool> onWillPop() {
+    DateTime now = DateTime.now();
+    if (currentBackPressTime == null || 
+        now.difference(currentBackPressTime) > Duration(seconds: 2)) {
+      currentBackPressTime = now;
+      Fluttertoast.showToast(msg: 'Double tap to exit');
+      return Future.value(false);
+    }
+    return SystemNavigator.pop();
+  }
+
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.0),
@@ -53,46 +64,61 @@ class _WaktuSolatPageState extends State<WaktuSolatPage> {
         ),
       ),
       drawer: menu.Durawa(),
-      body: DoubleBackToCloseApp(
-        snackBar: SnackBar(
-          content: Text('Double back to exit app'),
-        ),
-        child: SafeArea(
+      body: WillPopScope(
+        onWillPop: onWillPop,
+              child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Card(
+                        child: Text(
+                          'Online / Waktu Solat Atas Talian',
+                          style: TextStyle(fontSize: 20.0, color: Colors.white),
+                        ),
+                        color: kalerTema,
+                      )
+                    ],
+                  ),
+                ),
+                Buttons(negeri: LokasiOnline, negeriRoute: "/LocationOnline"),
+                gapBox,
                 Buttons(negeri: Johor, negeriRoute: "/JohorPilihan"),
                 gapBox,
                 Buttons(negeri: Kedah, negeriRoute: "/KedahPilihan"),
                 gapBox,
                 Buttons(negeri: Kelantan, negeriRoute: "/KelantanPilihan"),
                 gapBox,
-                Buttons(negeri: Melaka, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: Melaka, negeriRoute: "/MelakaPilihan"),
                 gapBox,
-                Buttons(negeri: N9, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: N9, negeriRoute: "/N9Pilihan"),
                 gapBox,
-                Buttons(negeri: Pahang, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: Pahang, negeriRoute: "/PahangPilihan"),
                 gapBox,
-                Buttons(negeri: Penang, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: Penang, negeriRoute: "/PenangPilihan"),
                 gapBox,
-                Buttons(negeri: Perak, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: Perak, negeriRoute: "/PerakPilihan"),
                 gapBox,
-                Buttons(negeri: Perlis, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: Perlis, negeriRoute: "/PerlisPilihan"),
                 gapBox,
-                Buttons(negeri: Sabah, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: Sabah, negeriRoute: "/SabahPilihan"),
                 gapBox,
-                Buttons(negeri: Sarawak, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: Sarawak, negeriRoute: "/SarawakPilihan"),
                 gapBox,
-                Buttons(negeri: Selangor, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: Selangor, negeriRoute: "/SelangorPilihan"),
                 gapBox,
-                Buttons(negeri: Terengganu, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: Terengganu, negeriRoute: "/TerengganuPilihan"),
                 gapBox,
-                Buttons(negeri: Putrajaya, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: Putrajaya, negeriRoute: "/WPPutrajayaPilihan"),
                 gapBox,
-                Buttons(negeri: KualaLumpur, negeriRoute: "/JohorPilihan"),
+                Buttons(
+                    negeri: KualaLumpur, negeriRoute: "/WPKualaLumpurPilihan"),
                 gapBox,
-                Buttons(negeri: Labuan, negeriRoute: "/JohorPilihan"),
+                Buttons(negeri: Labuan, negeriRoute: "/WPLabuanPilihan"),
               ],
             ),
           ),

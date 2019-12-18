@@ -18,7 +18,8 @@ final List<Card> negeriNegeri = [
   terengganu(),
   putrajaya(),
   kualalumpur(),
-  labuan()
+  labuan(),
+  lokasiOnline()
 ];
 //Colors
 const timeZone = 8.0;
@@ -40,6 +41,7 @@ const putrajayaColour = Color(0xFF000080);
 const kualaLumpurColour = Color(0xFFDC241F);
 const labuanColour = Color(0xFF003573);
 
+
 const int Johor = 0;
 const int Kedah = 1;
 const int Kelantan = 2;
@@ -56,6 +58,7 @@ const int Terengganu = 12;
 const int Putrajaya = 13;
 const int KualaLumpur = 14;
 const int Labuan = 15;
+const int LokasiOnline = 16;
 
 List<String> kodjohor = [
   "jhr-0",
@@ -298,9 +301,265 @@ List<String> kodterengganu = [
   "trg-5",
 ];
 
-List<String> kodwp = [
-  "wlp-0",
-  "wlp-1",
+List<String> kodkl = [
+  "wlp-0"
+];
+
+List<String> kodlabuan =[
+  "wlp-1"
+];
+
+List<String> kodputrajaya = [
   "wlp-2"
 ];
 
+List<String> lokasijohor = [
+  'Batu Pahat',
+  'Gemas',
+  'Johor Bahru',
+  'Kluang',
+  'Kota Tinggi',
+  'Mersing',
+  'Muar',
+  'Pemanggil',
+  'Pontian',
+  'Pulau Aur',
+  'Segamat',
+];
+
+List<String> lokasikedah = [
+  'Baling',
+  'Bandar Baharu',
+  'Kota Setar',
+  'Kuala Muda',
+  'Kubang Pasu',
+  'Kulim',
+  'Langkawi',
+  'Padang Terap',
+  'Pendang',
+  'Pokok Sena',
+  'Puncak Gunung Jerai',
+  'Sik',
+  'Yan',
+];
+
+List<String> lokasikelantan = [
+  'Bachok',
+  'Bertam',
+  'Jeli',
+  'Kota Bharu',
+  'Kuala Krai',
+  'Machang',
+  'Mukim Chiku',
+  'Mukim Galas',
+  'Pasir Mas',
+  'Pasir Puteh',
+  'Tanah Merah',
+  'Tumpat',
+];
+
+List<String> lokasimelaka = [
+  "Alor Gajah",
+  "Bandar Melaka",
+  "Jasin",
+  "Masjid Tanah",
+  "Merlimau",
+  "Nyalas",
+];
+
+List<String> lokasin9 = [
+  "Jelebu",
+  "Jempol",
+  "Kuala Pilah",
+  "Port Dickson",
+  "Rembau",
+  "Seremban",
+  "Tampin"
+];
+
+List<String> lokasipahang = [
+  "Bentong",
+  'Bera',
+  'Bukit Fraser',
+  'Cameron Highland',
+  'Chenor',
+  'Genting Highlands',
+  'Jerantut',
+  'Kuala Lipis',
+  'Kuantan',
+  'Maran',
+  'Muadzam Shah',
+  'Pekan',
+  'Pulau Tioman',
+  'Raub',
+  'Rompin',
+  'Temerloh',
+];
+
+List<String> lokasipenang = ["Pulau Pinang"];
+
+List<String> lokasiperak = [
+  'Bagan Datoh',
+  'Bagan Serai',
+  'Batu Gajah',
+  'Belum',
+  'Beruas',
+  'Bukit Larut',
+  'Gerik',
+  'Ipoh',
+  'Kampar',
+  'Kampung Gajah',
+  'Kuala Kangsar',
+  'Lenggong',
+  'Lumut',
+  'Parit',
+  'Parit Buntar',
+  'Pengkalan Hulu',
+  'Pulau Pangkor',
+  'Selama',
+  'Setiawan',
+  'Slim River',
+  'Sri Iskandar',
+  'Sungai Siput',
+  'Taiping',
+  'Tanjung Malim',
+  'Tapah',
+  'Teluk Intan',
+  'Temengor'
+];
+
+List<String> lokasiperlis = [
+  'Arau',
+  'Kangar',
+  'Padang Besar',
+];
+
+List<String> lokasisabah = [
+  'Balong',
+  'Bandar Bukit Garam',
+  'Beaufort',
+  'Beluran',
+  'Gunung Kinabalu',
+  'Kalabakan',
+  'Keningau',
+  'Kota Belud',
+  'Kota Kinabalu',
+  'Kota Marudu',
+  'Kuala Penyu',
+  'Kuamut',
+  'Kudat',
+  'Kunak',
+  'Lahat Datu',
+  'Long Pa Sia',
+  'Membakut',
+  'Merotai',
+  'Nabawan',
+  'Papar',
+  'Penampang',
+  'Pensiangan',
+  'Pinangah',
+  'Pitas',
+  'Pulau Banggi',
+  'Ranau',
+  'Sahabat',
+  'Sandakan',
+  'Semawang',
+  'Semporna',
+  'Silabukan',
+  'Sipitang',
+  'Tambisan',
+  'Tambunan',
+  'Tawau',
+  'Telupit',
+  'Temanggong',
+  'Tenom',
+  'Terusan',
+  'Tuaran',
+  'Tungku',
+  'Weston',
+];
+
+List<String> lokasisarawak = [
+  'Bau',
+  'Bekenu',
+  'Belaga',
+  'Belawai',
+  'Belingan',
+  'Betong',
+  'Bintulu',
+  'Bitangor',
+  'Dalat',
+  'Daro',
+  'Debak',
+  'Engkelili',
+  'Igan',
+  'Julau',
+  'Kabong',
+  'Kanowit',
+  'Kapit',
+  'Kuching',
+  'Lawas',
+  'Limbang',
+  'Lingga',
+  'Lundu',
+  'Marudi',
+  'Matu',
+  'Meludam',
+  'Miri',
+  'Niah',
+  'Oya',
+  'Pusa',
+  'Rajang',
+  'Roban',
+  'Samarahan',
+  'Saratok',
+  'Sarikei',
+  'Sebauh',
+  'Sebuyau',
+  'Sematan',
+  'Serian',
+  'Sibu',
+  'Sibuti',
+  'Simunjan',
+  'Song',
+  'Spaoh',
+  'Sri Aman',
+  'Sundar',
+  'Tatau',
+  'Terusan',
+];
+
+List<String> lokasiselangor = [
+  'Gombak',
+  'Hulu Langat',
+  'Hulu Selangor',
+  'Klang',
+  'Kuala Langat',
+  'Kuala Selangor',
+  'Petaling',
+  'Rawang',
+  'Sabak Bernam',
+  'Sepang',
+  'Shah Alam'
+];
+
+List<String> lokasiterengganu = [
+  'Besut' 	,
+'Hulu Terrenganu' 	,
+'Kemaman Dungun' ,
+'Kuala Terengganu' 	,
+'Marang' ,
+'Setiu',
+];
+
+List<String>  lokasikl = [
+  'Kuala Lumpur' 	
+];
+
+List<String> lokasilabuan = [
+  'Labuan'
+];
+
+List<String> lokasiputrajaya= [
+  'Putrajaya'
+];

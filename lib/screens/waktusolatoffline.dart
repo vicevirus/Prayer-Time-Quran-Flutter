@@ -6,8 +6,6 @@ import 'package:geolocator/geolocator.dart';
 
 
 
-
-
 class PrayerTimeList extends StatefulWidget {
   @override
   _PrayerTimeListState createState() => _PrayerTimeListState();
