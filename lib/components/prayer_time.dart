@@ -103,13 +103,13 @@ class PrayerTime{
 
     // Time Names
     _timeNames = new List<String>();
-    _timeNames.add("Fajr");
-    _timeNames.add("Sunrise");
-    _timeNames.add("Dhuhr");
-    _timeNames.add("Asr");
+    _timeNames.add("Subuh");
+    _timeNames.add("Syuruk");
+    _timeNames.add("Zohor");
+    _timeNames.add("Asar");
     _timeNames.add("Sunset");
     _timeNames.add("Maghrib");
-    _timeNames.add("Isha");
+    _timeNames.add("Isyak");
 
     _invalidTime = "-----"; // The string used for invalid times
 
@@ -160,7 +160,7 @@ class PrayerTime{
     _methodParams[this.getMakkah()] = _mkValues;
 
     // Egypt
-    List<double> _eValues = [19.8,1,0,0,18.3];
+    List<double> _eValues = [20,1,0,0,18];
     _methodParams[this.getEgypt()] = _eValues;
 
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:time_formatter/time_formatter.dart';
 import 'package:waktusolatimprovised/menu.dart' as menu;
 import 'package:intl/intl.dart';
+import 'package:waktusolatimprovised/components/easyBadgeCard.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 
@@ -53,9 +54,9 @@ class _WaktuDisplayLocationState extends State<WaktuDisplayLocation> {
 
   void subuhTime() {
     var now = new DateTime.now();
-    var format = new DateFormat('HH:mm a');
+    var format = new DateFormat('h:mma');
     var date = new DateTime.fromMillisecondsSinceEpoch(
-        widget.waktusolat['data']['times'][now.day][0] * 1000);
+        widget.waktusolat['data']['times'][now.day - 1][0] * 1000);
     var diff = now.difference(date);
     var time = '';
 
@@ -83,9 +84,9 @@ class _WaktuDisplayLocationState extends State<WaktuDisplayLocation> {
 
   void syurukTime() {
     var now = new DateTime.now();
-    var format = new DateFormat('HH:mm a');
+    var format = new DateFormat('h:mma');
     var date = new DateTime.fromMillisecondsSinceEpoch(
-        widget.waktusolat['data']['times'][now.day][1] * 1000);
+        widget.waktusolat['data']['times'][now.day - 1][1] * 1000);
     var diff = now.difference(date);
     var time = '';
 
@@ -113,9 +114,9 @@ class _WaktuDisplayLocationState extends State<WaktuDisplayLocation> {
 
   void zohorTime() {
     var now = new DateTime.now();
-    var format = new DateFormat('HH:mm a');
+    var format = new DateFormat('h:mma');
     var date = new DateTime.fromMillisecondsSinceEpoch(
-        widget.waktusolat['data']['times'][now.day][2] * 1000);
+        widget.waktusolat['data']['times'][now.day - 1][2] * 1000);
     var diff = now.difference(date);
     var time = '';
 
@@ -143,9 +144,9 @@ class _WaktuDisplayLocationState extends State<WaktuDisplayLocation> {
 
   void asarTime() {
     var now = new DateTime.now();
-    var format = new DateFormat('HH:mm a');
+    var format = new DateFormat('h:mma');
     var date = new DateTime.fromMillisecondsSinceEpoch(
-        widget.waktusolat['data']['times'][now.day][3] * 1000);
+        widget.waktusolat['data']['times'][now.day - 1][3] * 1000);
     var diff = now.difference(date);
     var time = '';
 
@@ -173,9 +174,9 @@ class _WaktuDisplayLocationState extends State<WaktuDisplayLocation> {
 
   void maghribTime() {
     var now = new DateTime.now();
-    var format = new DateFormat('HH:mm a');
+    var format = new DateFormat('h:mma');
     var date = new DateTime.fromMillisecondsSinceEpoch(
-        widget.waktusolat['data']['times'][now.day][4] * 1000);
+        widget.waktusolat['data']['times'][now.day - 1][4] * 1000);
     var diff = now.difference(date);
     var time = '';
 
@@ -203,9 +204,9 @@ class _WaktuDisplayLocationState extends State<WaktuDisplayLocation> {
 
   void isyakTime() {
     var now = new DateTime.now();
-    var format = new DateFormat('HH:mm a');
+    var format = new DateFormat('h:mma');
     var date = new DateTime.fromMillisecondsSinceEpoch(
-        widget.waktusolat['data']['times'][now.day][5] * 1000);
+        widget.waktusolat['data']['times'][now.day - 1][5] * 1000);
     var diff = now.difference(date);
     var time = '';
 
@@ -251,77 +252,41 @@ class _WaktuDisplayLocationState extends State<WaktuDisplayLocation> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Card(
-                      child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          child: Row(
-                            children: <Widget>[
-                              Text("Subuh"),
-                              Text(subuh,
-                                  style: TextStyle(
-                                      fontSize: 18.0, color: Colors.black87)),
-                            ],
-                          )),
+                    EasyCard(
+                      title: 'Subuh:  $subuh',
+                       titleColor: Colors.red,
+                      backgroundColor: Colors.black12,
+                      suffixBadge: Colors.blueGrey,
                     ),
-                    Card(
-                      child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          child: Row(
-                            children: <Widget>[
-                              Text("Syuruk: "),
-                              Text(syuruk,
-                                  style: TextStyle(
-                                      fontSize: 18.0, color: Colors.red)),
-                            ],
-                          )),
+                    EasyCard(
+                      title: 'Syuruk:  $syuruk',
+                       titleColor: Colors.red,
+                      backgroundColor: Colors.black12,
+                      suffixBadge: Colors.blueGrey,
                     ),
-                    Card(
-                      child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          child: Row(
-                            children: <Widget>[
-                              Text("Zohor: "),
-                              Text(zohor,
-                                  style: TextStyle(
-                                      fontSize: 18.0, color: Colors.red)),
-                            ],
-                          )),
+                    EasyCard(
+                      title: 'Zohor:  $zohor',
+                       titleColor: Colors.red,
+                      backgroundColor: Colors.black12,
+                      suffixBadge: Colors.blueGrey,
                     ),
-                    Card(
-                      child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          child: Row(
-                            children: <Widget>[
-                              Text("Asar: "),
-                              Text(asar,
-                                  style: TextStyle(
-                                      fontSize: 18.0, color: Colors.red)),
-                            ],
-                          )),
+                    EasyCard(
+                      title: 'Asar:  $asar',
+                       titleColor: Colors.red,
+                      backgroundColor: Colors.black12,
+                      suffixBadge: Colors.blueGrey,
                     ),
-                    Card(
-                      child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          child: Row(
-                            children: <Widget>[
-                              Text("Maghrib: "),
-                              Text(maghrib,
-                                  style: TextStyle(
-                                      fontSize: 18.0, color: Colors.red)),
-                            ],
-                          )),
+                    EasyCard(
+                      title: 'Maghrib:  $maghrib',
+                       titleColor: Colors.red,
+                      backgroundColor: Colors.black12,
+                      suffixBadge: Colors.blueGrey,
                     ),
-                    Card(
-                      child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          child: Row(
-                            children: <Widget>[
-                              Text("Isyak: "),
-                              Text(isyak,
-                                  style: TextStyle(
-                                      fontSize: 18.0, color: Colors.red)),
-                            ],
-                          )),
+                    EasyCard(
+                      titleColor: Colors.red,
+                      backgroundColor: Colors.black12,
+                      suffixBadge: Colors.blueGrey,
+                      title: 'Isyak:  $isyak',
                     ),
                   ],
                 ),

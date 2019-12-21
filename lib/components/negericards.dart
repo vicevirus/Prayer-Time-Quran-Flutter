@@ -2,7 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:waktusolatimprovised/components/constants.dart';
 import 'easyBadgeCard.dart';
 import 'flags.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
+
+Card lokasiOffline() {
+  return Card(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+    child: Container(
+        padding: EdgeInsets.only(top: 70.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+          image: DecorationImage(
+            image: AssetImage('images/malaysiamap.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: EasyBadgeCard(
+          rightBadge: kalerTema,
+          title: 'Cari berdasarkan lokasi (Offline)',
+          description: 'Kurang tepat perbezaan dalam +-2-4 minit.',
+          suffixIcon: Icons.chevron_right,
+          suffixIconColor: Colors.green[500],
+        )),
+  );
+}
 
 Card lokasiOnline() {
   return Card(
@@ -18,8 +41,8 @@ Card lokasiOnline() {
         ),
         child: EasyBadgeCard(
           rightBadge: kalerTema,
-          title: 'Cari berdasarkan lokasi',
-          description: 'Sila pastikan mod lokasi anda diset kepada \"High Accuracy"',
+          title: 'Cari berdasarkan lokasi (Online)',
+          description: 'Sila pastikan mod lokasi anda diset kepada \"High Accuracy".',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),

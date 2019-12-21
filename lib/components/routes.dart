@@ -4,7 +4,7 @@ import 'package:waktusolatimprovised/screens/loadingpages/loading.dart';
 import 'package:waktusolatimprovised/screens/loadingpages/loadinglocation.dart';
 import 'package:waktusolatimprovised/screens/negeri/waktusolatpapar.dart';
 import 'package:waktusolatimprovised/screens/pilihan/pilihan.dart';
-import 'package:waktusolatimprovised/screens/waktusolatoffline.dart';
+import 'package:waktusolatimprovised/screens/negeri/waktusolatoffline.dart';
 import 'sliderightransition.dart';
 import 'package:waktusolatimprovised/waktusolatpage.dart';
 

@@ -37,6 +37,8 @@ dependencies:
   data_connection_checker: ^0.3.4
   intl: ^0.16.0
   dynamic_theme: ^1.0.0
+  auto_size_text: ^2.1.0
+
   
 
 

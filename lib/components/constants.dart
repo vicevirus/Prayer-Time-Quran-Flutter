@@ -19,7 +19,8 @@ final List<Card> negeriNegeri = [
   putrajaya(),
   kualalumpur(),
   labuan(),
-  lokasiOnline()
+  lokasiOnline(),
+  lokasiOffline()
 ];
 //Colors
 const timeZone = 8.0;
@@ -59,6 +60,7 @@ const int Putrajaya = 13;
 const int KualaLumpur = 14;
 const int Labuan = 15;
 const int LokasiOnline = 16;
+const int LokasiOffline = 17;
 
 List<String> kodjohor = [
   "jhr-0",

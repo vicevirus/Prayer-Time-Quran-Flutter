@@ -28,15 +28,24 @@ class _LoadingLocationPageState extends State<LoadingLocationPage> {
   void initState() {
     super.initState();
 
-    checker();
+    checkerinternetandgps();
   }
+  
 
-  checker() async {
+
+  checkerinternetandgps() async {
     bool result = await DataConnectionChecker().hasConnection;
-    if (result == true) {
+    bool geolocationStatus  = await Geolocator().isLocationServiceEnabled();
+    if (result == true ) {
+
+    }  else {
+      Fluttertoast.showToast(msg: " You dont have an internet connection!");
+      Navigator.pushReplacementNamed(context, '/');
+    }
+    if (geolocationStatus == true) {
       getSData();
     } else {
-      Fluttertoast.showToast(msg: " You dont have an internet connection!");
+      Fluttertoast.showToast(msg: "Turn on your GPS or give permission for app to access your location!");
       Navigator.pushReplacementNamed(context, '/');
     }
   }

@@ -4,6 +4,7 @@ import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'easyBadgeCard.dart';
 
+
 class Buttons extends StatelessWidget {
   final int negeri;
   final negeriRoute;
@@ -23,6 +24,35 @@ class Buttons extends StatelessWidget {
             arguments: Pilihan(
               negeriDipilih: this.negeriDipilih,
               negeriRoute: '/Pilihan',
+              kodnegeri: this.negeriKod,
+            ),
+          );
+
+        },
+        child: negeriNegeri[this.negeri]);
+  }
+  
+}
+
+class ButtonsLocation extends StatelessWidget {
+  final int negeri;
+  final negeriRoute;
+  final negeriDipilih;
+  final negeriKod;
+
+  const ButtonsLocation({Key key, this.negeri, this.negeriRoute, this.negeriDipilih, this.negeriKod}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+
+    
+    return GestureDetector(
+        onTap: () async{
+          Navigator.pushNamed(
+            context,
+            this.negeriRoute,
+            arguments: Pilihan(
+              negeriDipilih: this.negeriDipilih,
+              negeriRoute: '/LocationOnline',
               kodnegeri: this.negeriKod,
             ),
           );
