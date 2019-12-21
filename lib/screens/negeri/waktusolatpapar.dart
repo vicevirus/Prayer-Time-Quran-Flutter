@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:time_formatter/time_formatter.dart';
+import 'package:waktusolatimprovised/components/sliderightransition.dart';
 import 'package:waktusolatimprovised/menu.dart' as menu;
 import 'package:intl/intl.dart';
+import 'package:waktusolatimprovised/screens/pilihan/pilihan.dart';
+import 'package:waktusolatimprovised/waktusolatpage.dart';
 
 class WaktuDisplay extends StatefulWidget {
   final waktusolat;
   final route;
-  WaktuDisplay({this.waktusolat, this.route});
+  final backNegeriDipilih;
+  final backNegeriRoute;
+  WaktuDisplay({this.waktusolat, this.route, this.backNegeriDipilih, this.backNegeriRoute});
   @override
   _WaktuDisplayState createState() => _WaktuDisplayState();
 }
@@ -30,6 +35,7 @@ class _WaktuDisplayState extends State<WaktuDisplay> {
   void updateUI() {
     setState(() {
       tempat = widget.waktusolat['response']['place'];
+ 
       subuhTime();
       syurukTime();
       zohorTime();
@@ -223,7 +229,8 @@ class _WaktuDisplayState extends State<WaktuDisplay> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        Navigator.pushReplacementNamed(context, widget.route);
+        Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
+        
       },
       child: Scaffold(
         appBar: PreferredSize(

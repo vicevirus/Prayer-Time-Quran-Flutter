@@ -9,10 +9,12 @@ import 'dart:convert';
 import 'package:data_connection_checker/data_connection_checker.dart';
 
 class LoadingPage extends StatefulWidget {
+  final String backNegeriDipilih;
+  final String backNegeriRoute;
   final String tempatDipilih;
   final String nextroute;
 
-  const LoadingPage({this.tempatDipilih, this.nextroute});
+  const LoadingPage({this.tempatDipilih, this.nextroute, this.backNegeriDipilih, this.backNegeriRoute});
   @override
   _LoadingPageState createState() =>
       _LoadingPageState();

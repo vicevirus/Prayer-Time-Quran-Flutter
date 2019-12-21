@@ -1,3 +1,5 @@
+import 'package:waktusolatimprovised/screens/pilihan/pilihan.dart';
+
 import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'easyBadgeCard.dart';
@@ -5,8 +7,10 @@ import 'easyBadgeCard.dart';
 class Buttons extends StatelessWidget {
   final int negeri;
   final negeriRoute;
+  final negeriDipilih;
+  final negeriKod;
 
-  const Buttons({Key key, this.negeri, this.negeriRoute}) : super(key: key);
+  const Buttons({Key key, this.negeri, this.negeriRoute, this.negeriDipilih, this.negeriKod}) : super(key: key);
   @override
   Widget build(BuildContext context) {
 
@@ -15,7 +19,12 @@ class Buttons extends StatelessWidget {
         onTap: () async{
           Navigator.pushNamed(
             context,
-            this.negeriRoute,
+            '/Pilihan',
+            arguments: Pilihan(
+              negeriDipilih: this.negeriDipilih,
+              negeriRoute: '/Pilihan',
+              kodnegeri: this.negeriKod,
+            ),
           );
 
         },

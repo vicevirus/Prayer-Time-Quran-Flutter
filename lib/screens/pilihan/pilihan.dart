@@ -6,12 +6,20 @@ import 'package:waktusolatimprovised/components/easyBadgeCard.dart';
 import 'package:waktusolatimprovised/components/sliderightransition.dart';
 import 'package:waktusolatimprovised/screens/loadingpages/loading.dart';
 
-class PilihanKelantan extends StatefulWidget {
+class Pilihan extends StatefulWidget {
+  final negeriDipilih;
+  final negeriRoute;
+  final kodnegeri;
+
+  const Pilihan({Key key, this.negeriDipilih, this.negeriRoute, this.kodnegeri}) : super(key: key);
   @override
-  PilihanKelantanState createState() => PilihanKelantanState();
+  PilihanState createState() => PilihanState();
 }
 
-class PilihanKelantanState extends State<PilihanKelantan> {
+class PilihanState extends State<Pilihan> {
+
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -32,15 +40,16 @@ class PilihanKelantanState extends State<PilihanKelantan> {
             child: Center(
               child: ListView.builder(
                 itemBuilder: (BuildContext context, int index) {
-                  return TempatPilihanKelantan(
-                  tempat: '${lokasikelantan[index]}',
+                  return TempatPilihanJohor(
+                  tempat: '${widget.negeriDipilih[index]}',
                   page: LoadingPage(
-                    tempatDipilih: kodkelantan[index],
-                    nextroute: '/KelantanPilihan',
+                    
+                    tempatDipilih: widget.kodnegeri[index],
+                    nextroute: '${widget.negeriRoute}',
                   ),
                   );
                 },
-                itemCount: lokasikelantan.length,
+                itemCount: widget.negeriDipilih.length,
               ),
             ),
           )),
@@ -49,10 +58,10 @@ class PilihanKelantanState extends State<PilihanKelantan> {
 }
 
 
-class TempatPilihanKelantan extends StatelessWidget {
+class TempatPilihanJohor extends StatelessWidget {
   final String tempat;
   final page;
-  const TempatPilihanKelantan({Key key, this.tempat, this.page}) : super(key: key);
+  const TempatPilihanJohor({Key key, this.tempat, this.page}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +70,7 @@ class TempatPilihanKelantan extends StatelessWidget {
         Navigator.push(context, SlideRightRoute(page: this.page));
       },
       child: EasyBadgeCard(
-        rightBadge: kelantanColour,
+        rightBadge: johorColour,
         title: this.tempat,
         suffixIcon: Icons.chevron_right,
         suffixIconColor: Colors.green[500],
