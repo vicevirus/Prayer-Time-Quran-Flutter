@@ -33,7 +33,7 @@ Remember to turn on unknown sources in settings and click 'install anyway' durin
 - Anyone that is involved intentionally or unintentionally
 - StackOverFlow
 - Flutter facebook group
-- Sorry if I didn't forgot someone in the credit.. please tell me if you want to put your name in the credit.
+- Sorry if I forgot someone in the credit.. please tell me if you want to put your name in the credit.
 
 
 This is a work of a beginner in flutter/dart and programming generally sorry if something hurts your eye .
