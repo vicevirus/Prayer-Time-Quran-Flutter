@@ -1,5 +1,6 @@
-# malaysiamuslimkitflutter
-A flutter app to check prayer times in Malaysia online/offline and Quran offline.
+# prayertimeandquranMalaysia
+A flutter app to check prayer times in Malaysia online/offline and Quran offline.Dark Mode and Light Mode switch included.
+Quran translation in English and Malay is also available.
 
 
 
