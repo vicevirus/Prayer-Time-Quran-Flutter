@@ -2,6 +2,11 @@
 A flutter app to check prayer times in Malaysia online/offline and Quran offline.Dark Mode and Light Mode switch included.
 Quran translation in English and Malay is also available.
 
+Here is the release apk<br/>
+<a href="https://raw.githubusercontent.com/vicevirus/prayertimeandquranflutterMalaysia/master/app-release.apk">Download (20.6mb)</a><br/>
+
+Remember to turn on unknown sources in settings and click 'install anyway' during installation.
+
 
 
 # Screenshots
