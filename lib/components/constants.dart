@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'negericards.dart';
+import 'package:hijri/umm_alqura_calendar.dart';
+
+
+  
+  var gregorianDate = new DateTime.now();
+  String formattedGregorianDate = DateFormat('dd MMMM yyyy').format(gregorianDate);
+
+  var hijriDate = new ummAlquraCalendar.now();
+  String formattedHijriDate = hijriDate.toFormat("dd MMMM yyyy");
 
 final Widget gapBox = SizedBox(height: 15.0);
 final List<Card> negeriNegeri = [

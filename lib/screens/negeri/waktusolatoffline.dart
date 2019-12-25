@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:waktusolatimprovised/components/constants.dart';
 import 'package:waktusolatimprovised/components/prayer_time.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:waktusolatimprovised/components/easyBadgeCard.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:hijri/umm_alqura_calendar.dart';
+import 'package:waktusolatimprovised/menu.dart';
 
 class PrayerTimeList extends StatefulWidget {
   @override
@@ -40,8 +43,9 @@ class _PrayerTimeListState extends State<PrayerTimeList> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: new AppBar(
-          title: new Text("Waktu Solat (Offline)"),
+          title: new Text("Waktu Solat Offline}"),
         ),
+        drawer: Durawa(),
         body: _prayerTimes.isEmpty ? circularIndicator() : prayerListWidget());
   }
 
@@ -53,7 +57,7 @@ class _PrayerTimeListState extends State<PrayerTimeList> {
 
   Widget prayerListWidget() {
     return ListView.builder(
-      itemCount: _prayerTimes.length,
+      itemCount: 1,
       itemBuilder: (context, position) {
         return Container(
           child: Center(
@@ -61,11 +65,59 @@ class _PrayerTimeListState extends State<PrayerTimeList> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 EasyCard(
-                  title: '${_prayerNames[position]}: ${_prayerTimes[position]}',
+                  title: 'Hijri Date:  $formattedHijriDate',
+                  titleColor: Colors.red,
+                  backgroundColor: Colors.white,
+                  suffixBadge: Colors.blueGrey,
+                ),
+                EasyCard(
+                  title: 'Gregorian Date:  $formattedGregorianDate',
+                  titleColor: Colors.red,
+                  backgroundColor: Colors.white,
+                  suffixBadge: Colors.blueGrey,
+                ),
+                EasyCard(
+                  title: 'Subuh:  ${_prayerTimes[position]}',
                   titleColor: Colors.red,
                   backgroundColor: Colors.black12,
                   suffixBadge: Colors.blueGrey,
-                )
+                ),
+                EasyCard(
+                  title: 'Syuruk:  ${_prayerTimes[position]}',
+                  titleColor: Colors.red,
+                  backgroundColor: Colors.black12,
+                  suffixBadge: Colors.blueGrey,
+                ),
+                EasyCard(
+                  title: 'Zohor:  ${_prayerTimes[position]}',
+                  titleColor: Colors.red,
+                  backgroundColor: Colors.black12,
+                  suffixBadge: Colors.blueGrey,
+                ),
+                EasyCard(
+                  title: 'Asar:  ${_prayerTimes[position]}',
+                  titleColor: Colors.red,
+                  backgroundColor: Colors.black12,
+                  suffixBadge: Colors.blueGrey,
+                ),
+                EasyCard(
+                  title: 'Sunset:  ${_prayerTimes[position]}',
+                  titleColor: Colors.red,
+                  backgroundColor: Colors.black12,
+                  suffixBadge: Colors.blueGrey,
+                ),
+                EasyCard(
+                  title: 'Maghrib:  ${_prayerTimes[position]}',
+                  titleColor: Colors.red,
+                  backgroundColor: Colors.black12,
+                  suffixBadge: Colors.blueGrey,
+                ),
+                EasyCard(
+                  titleColor: Colors.red,
+                  backgroundColor: Colors.black12,
+                  suffixBadge: Colors.blueGrey,
+                  title: 'Isyak:  ${_prayerTimes[position]}',
+                ),
               ],
             ),
           ),

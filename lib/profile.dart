@@ -71,11 +71,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 padding: EdgeInsets.all(25.0),
                 child: ListTile(
                   leading: Icon(
-                    Icons.phone,
+                    Icons.person,
                     color: Colors.teal,
                   ),
                   title: Text(
-                    '+60146225334',
+                    'Instagram: theddaus',
                     style: TextStyle(
                       color: Colors.teal.shade900,
                       fontFamily: 'Source Sans Pro',

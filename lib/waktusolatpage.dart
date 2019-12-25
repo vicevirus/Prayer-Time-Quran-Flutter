@@ -5,6 +5,7 @@ import 'components/negeributtons.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+
 class WaktuSolat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,11 @@ class WaktuSolat extends StatelessWidget {
 }
 
 class WaktuSolatPage extends StatefulWidget {
+  
+  
+  
   @override
+  
   _WaktuSolatPageState createState() => _WaktuSolatPageState();
 }
 

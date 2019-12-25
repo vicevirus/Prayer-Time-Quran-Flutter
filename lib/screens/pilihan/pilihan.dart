@@ -40,7 +40,7 @@ class PilihanState extends State<Pilihan> {
             child: Center(
               child: ListView.builder(
                 itemBuilder: (BuildContext context, int index) {
-                  return TempatPilihanJohor(
+                  return TempatPilihan(
                   tempat: '${widget.negeriDipilih[index]}',
                   page: LoadingPage(
                     
@@ -58,10 +58,10 @@ class PilihanState extends State<Pilihan> {
 }
 
 
-class TempatPilihanJohor extends StatelessWidget {
+class TempatPilihan extends StatelessWidget {
   final String tempat;
   final page;
-  const TempatPilihanJohor({Key key, this.tempat, this.page}) : super(key: key);
+  const TempatPilihan({Key key, this.tempat, this.page}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

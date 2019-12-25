@@ -3,9 +3,11 @@ import 'components/constants.dart';
 import 'waktusolatpage.dart';
 import 'profile.dart';
 import 'quranpage.dart';
+import 'package:gradient_widgets/gradient_widgets.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 
 class MenuTitle extends StatelessWidget {
+
   final String title;
 
   const MenuTitle({Key key, this.title}) : super(key: key);
@@ -50,105 +52,96 @@ class Durawa extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            Container(
-              height: 90.0,
-              child: DrawerHeader(
-                child: Text(
-                  'Menu',
-                  style: TextStyle(
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.white),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              color: kalerTema,
-            ),
-            Card(
-              color: kalerTema,
-              child: ListTile(
-                title: Text(
-                  'Waktu Solat',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w200,
-                      color: Colors.white,
-                      fontSize: 30.0),
-                ),
-                leading: Icon(
-                  Icons.alarm,
-                  color: Colors.white,
-                ),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => WaktuSolatPage()));
-                },
-              ),
-            ),
-            Card(
-              color: kalerTema,
-              child: ListTile(
-                title: Text(
-                  'Quran Page',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w200,
-                      color: Colors.white,
-                      fontSize: 30.0),
-                ),
-                leading: Icon(
-                  Icons.book,
-                  color: Colors.white,
-                ),
-                onTap: () {
-                },
-              ),
-            ),
-            Card(
-              color: kalerTema,
-              child: ListTile(
-                title: Text(
-                  'Profile',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w200,
-                      color: Colors.white,
-                      fontSize: 30.0),
-                ),
-                leading: Icon(
-                  Icons.alarm,
-                  color: Colors.white,
-                ),
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Profile()));
-                },
-              ),
-            ),
-            Container(
-              alignment: Alignment.bottomCenter,
-              child: Card(
-                margin: EdgeInsets.only(top: 350.0),
-                color: kalerTema,
-                child: ListTile(
-                  title: Text(
-                    'Dark/Light Toggle',
+            DrawerHeader(
+              padding: EdgeInsets.only(top: 1.0, bottom: 0.0),
+              child: GradientCard(
+                gradient: Gradients.cosmicFusion,
+                shadowColor: Gradients.taitanum.colors.last.withOpacity(0.25),
+                elevation: 8,
+                child: Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Menu',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w200,
-                        color: Colors.white,
-                        fontSize: 30.0),
+                    style: TextStyle(fontSize: 30.0),
                   ),
-                  leading: Icon(
-                    Icons.lightbulb_outline,
-                    color: Colors.white,
-                  ),
-                  onTap: () {
-                    changeBrightness();
-                  },
                 ),
+              ),
+            ),
+            GradientButton(
+              increaseWidthBy: 200.0,
+              increaseHeightBy: 20.0,
+              child: Text(
+                'Waktu Solat',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w300),
+              ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)),
+              callback: () {
+                Navigator.pushNamed(context, '/');
+              },
+              gradient: Gradients.tameer,
+              elevation: 20.0,
+              shadowColor: Gradients.backToFuture.colors.last.withOpacity(0.25),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            GradientButton(
+              increaseWidthBy: 200.0,
+              increaseHeightBy: 20.0,
+              child: Text(
+                'Al-Quran',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w300),
+              ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)),
+              callback: () {
+                Navigator.pushNamed(context, '/QuranPilihanPage');
+              },
+              gradient: Gradients.tameer,
+              elevation: 20.0,
+              shadowColor: Gradients.backToFuture.colors.last.withOpacity(0.25),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            GradientButton(
+              increaseWidthBy: 200.0,
+              increaseHeightBy: 20.0,
+              child: Text(
+                'About',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w300),
+              ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)),
+              callback: () {
+                Navigator.pushNamed(context, '/Profile');
+              },
+              gradient: Gradients.tameer,
+              elevation: 20.0,
+              shadowColor: Gradients.backToFuture.colors.last.withOpacity(0.25),
+            ),
+            SizedBox(
+              height: 280.0,
+            ),
+            Container(
+              child: GradientButton(
+                increaseWidthBy: 180.0,
+                increaseHeightBy: 20.0,
+                child: Text(
+                  'Dark/Light Mode',
+                  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w300),
+                ),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                callback: () {
+                  changeBrightness();
+                },
+                gradient: Gradients.hersheys,
+                elevation: 200.0,
+                shadowColor:
+                    Gradients.cosmicFusion.colors.last.withOpacity(0.30),
               ),
             ),
           ],

@@ -4,6 +4,7 @@ import 'package:waktusolatimprovised/components/constants.dart';
 import 'package:waktusolatimprovised/components/sliderightransition.dart';
 import 'package:waktusolatimprovised/menu.dart' as menu;
 import 'package:intl/intl.dart';
+import 'package:hijri/umm_alqura_calendar.dart';
 import 'package:waktusolatimprovised/components/easyBadgeCard.dart';
 import 'package:waktusolatimprovised/screens/pilihan/pilihan.dart';
 import 'package:waktusolatimprovised/waktusolatpage.dart';
@@ -13,6 +14,7 @@ class WaktuDisplay extends StatefulWidget {
   final route;
   final backNegeriDipilih;
   final backNegeriRoute;
+  var hijriDate = new ummAlquraCalendar.fromDate(new DateTime.now());
   WaktuDisplay(
       {this.waktusolat,
       this.route,
@@ -252,32 +254,44 @@ class _WaktuDisplayState extends State<WaktuDisplay> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     EasyCard(
+                      title: 'Hijri Date:  $formattedHijriDate',
+                      titleColor: Colors.red,
+                      backgroundColor: Colors.white,
+                      suffixBadge: Colors.blueGrey,
+                    ),
+                    EasyCard(
+                      title: 'Gregorian Date:  $formattedGregorianDate',
+                      titleColor: Colors.red,
+                      backgroundColor: Colors.white,
+                      suffixBadge: Colors.blueGrey,
+                    ),
+                    EasyCard(
                       title: 'Subuh:  $subuh',
-                       titleColor: Colors.red,
+                      titleColor: Colors.red,
                       backgroundColor: Colors.black12,
                       suffixBadge: Colors.blueGrey,
                     ),
                     EasyCard(
                       title: 'Syuruk:  $syuruk',
-                       titleColor: Colors.red,
+                      titleColor: Colors.red,
                       backgroundColor: Colors.black12,
                       suffixBadge: Colors.blueGrey,
                     ),
                     EasyCard(
                       title: 'Zohor:  $zohor',
-                       titleColor: Colors.red,
+                      titleColor: Colors.red,
                       backgroundColor: Colors.black12,
                       suffixBadge: Colors.blueGrey,
                     ),
                     EasyCard(
                       title: 'Asar:  $asar',
-                       titleColor: Colors.red,
+                      titleColor: Colors.red,
                       backgroundColor: Colors.black12,
                       suffixBadge: Colors.blueGrey,
                     ),
                     EasyCard(
                       title: 'Maghrib:  $maghrib',
-                       titleColor: Colors.red,
+                      titleColor: Colors.red,
                       backgroundColor: Colors.black12,
                       suffixBadge: Colors.blueGrey,
                     ),

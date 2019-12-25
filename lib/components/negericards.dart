@@ -195,8 +195,8 @@ Card penang() {
         ),
         child: EasyBadgeCard(
           rightBadge: penangColour,
-          title: '${kodpenang.length} Kawasan',
-          description: '1 Zon',
+          title: 'Penang',
+          description: '1 Kawasan',
           suffixIcon: Icons.chevron_right,
           suffixIconColor: Colors.green[500],
         )),

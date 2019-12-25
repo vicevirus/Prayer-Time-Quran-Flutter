@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:waktusolatimprovised/components/routes.dart';
 
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
       ),
       themedWidgetBuilder: (context, theme) {
         return new MaterialApp(
-          title: 'Flutter Demo',
+          debugShowCheckedModeBanner: false,
+          title: 'Muslim Kit',
           theme: theme,
           initialRoute: '/',
          onGenerateRoute: RouteGenerator.generateRoute,

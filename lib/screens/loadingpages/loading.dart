@@ -25,19 +25,12 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   void initState() {
     super.initState();
+    getSData();
 
-    checker();
+
   }
 
-  checker() async {
-    bool result = await DataConnectionChecker().hasConnection;
-    if (result == true) {
-      getSData();
-    } else {
-      Fluttertoast.showToast(msg: " You dont have an internet connection!");
-      Navigator.pushReplacementNamed(context, '${widget.nextroute}');
-    }
-  }
+  
 
   Map<String, dynamic> data;
 
