@@ -43,7 +43,7 @@ class _PrayerTimeListState extends State<PrayerTimeList> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: new AppBar(
-          title: new Text("Waktu Solat Offline}"),
+          title: new Text("Waktu Solat Offline"),
         ),
         drawer: Durawa(),
         body: _prayerTimes.isEmpty ? circularIndicator() : prayerListWidget());
@@ -77,37 +77,37 @@ class _PrayerTimeListState extends State<PrayerTimeList> {
                   suffixBadge: Colors.blueGrey,
                 ),
                 EasyCard(
-                  title: 'Subuh:  ${_prayerTimes[position]}',
+                  title: 'Subuh:  ${_prayerTimes[0]}',
                   titleColor: Colors.red,
                   backgroundColor: Colors.black12,
                   suffixBadge: Colors.blueGrey,
                 ),
                 EasyCard(
-                  title: 'Syuruk:  ${_prayerTimes[position]}',
+                  title: 'Syuruk:  ${_prayerTimes[1]}',
                   titleColor: Colors.red,
                   backgroundColor: Colors.black12,
                   suffixBadge: Colors.blueGrey,
                 ),
                 EasyCard(
-                  title: 'Zohor:  ${_prayerTimes[position]}',
+                  title: 'Zohor:  ${_prayerTimes[2]}',
                   titleColor: Colors.red,
                   backgroundColor: Colors.black12,
                   suffixBadge: Colors.blueGrey,
                 ),
                 EasyCard(
-                  title: 'Asar:  ${_prayerTimes[position]}',
+                  title: 'Asar:  ${_prayerTimes[3]}',
                   titleColor: Colors.red,
                   backgroundColor: Colors.black12,
                   suffixBadge: Colors.blueGrey,
                 ),
                 EasyCard(
-                  title: 'Sunset:  ${_prayerTimes[position]}',
+                  title: 'Sunset:  ${_prayerTimes[4]}',
                   titleColor: Colors.red,
                   backgroundColor: Colors.black12,
                   suffixBadge: Colors.blueGrey,
                 ),
                 EasyCard(
-                  title: 'Maghrib:  ${_prayerTimes[position]}',
+                  title: 'Maghrib:  ${_prayerTimes[5]}',
                   titleColor: Colors.red,
                   backgroundColor: Colors.black12,
                   suffixBadge: Colors.blueGrey,
@@ -116,7 +116,7 @@ class _PrayerTimeListState extends State<PrayerTimeList> {
                   titleColor: Colors.red,
                   backgroundColor: Colors.black12,
                   suffixBadge: Colors.blueGrey,
-                  title: 'Isyak:  ${_prayerTimes[position]}',
+                  title: 'Isyak:  ${_prayerTimes[6]}',
                 ),
               ],
             ),
@@ -161,6 +161,7 @@ class _PrayerTimeListState extends State<PrayerTimeList> {
     var currentTime = DateTime.now();
 
     setState(() {
+      
       _prayerTimes = prayers.getPrayerTimes(currentTime,
           _currentPosition.latitude, _currentPosition.longitude, timeZone);
       _prayerNames = prayers.getTimeNames();
