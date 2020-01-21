@@ -56,6 +56,9 @@ class QuranPageState extends State<QuranPage> {
                   var quranTranslationM = json.decode(translateM);
                   var quranTranslationEN = json.decode(translateEN);
                   var surahNama = json.decode(surahName);
+                  var quranTextNumber = json.decode(text);
+
+                  var number = quranTextNumber['sura'][widget.surahDipilih]['aya'].length;
 
                   // Decode the JSONR
 
@@ -71,7 +74,8 @@ class QuranPageState extends State<QuranPage> {
                             ['@text'],
                         quranTranslationEN[widget.surahDipilih]['aya'][index]
                             ['@text'],
-                        surahNama[widget.surahDipilih]['transliteration_en']
+                        surahNama[widget.surahDipilih]['transliteration_en'],
+                        quranText['sura'][widget.surahDipilih]['aya'][index]
                       ];
                       var arabicText;
                       var malayText;
@@ -88,7 +92,7 @@ class QuranPageState extends State<QuranPage> {
                           child: Row(
                             children: <Widget>[
                               SizedBox(
-                                width: 45,
+                                width: 55,
                               ),
                               Flexible(
                                 child: Column(
@@ -144,7 +148,7 @@ class QuranPageState extends State<QuranPage> {
                         ),
                       );
                     },
-                    itemCount: text.length,
+                    itemCount: number,
                   );
                 }),
           ),
