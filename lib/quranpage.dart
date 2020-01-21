@@ -92,7 +92,7 @@ class QuranPageState extends State<QuranPage> {
                           child: Row(
                             children: <Widget>[
                               SizedBox(
-                                width: 55,
+                                width: 62,
                               ),
                               Flexible(
                                 child: Column(
