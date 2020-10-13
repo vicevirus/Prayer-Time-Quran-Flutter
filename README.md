@@ -12,10 +12,10 @@ Remember to turn on unknown sources in settings and click 'install anyway' durin
 # Screenshots
 | Page | Screenshot |
 | ------------- | ------------- |
-| Waktu Solat Page  | <img src="https://i.ibb.co/hFm7HNg/80679807-2911399252227175-2731318386704252928-n.jpg" width="400">  |
-| Pilihan Kawasan Page  | <img src="https://i.ibb.co/CHgG4xc/80869468-730780074110209-8538255294931664896-n.jpg" width="400">  |
+| Prayer Times  | <img src="https://i.ibb.co/hFm7HNg/80679807-2911399252227175-2731318386704252928-n.jpg" width="400">  |
+| Area selection Page  | <img src="https://i.ibb.co/CHgG4xc/80869468-730780074110209-8538255294931664896-n.jpg" width="400">  |
 | Developer Page | <img src="https://i.ibb.co/GTWKw7S/80053897-2514472802133872-6613015305188802560-n.jpg" width="400">  |
-| Pilihan Surah Page | <img src="https://i.ibb.co/Q9xfCV5/80385964-2711115278967611-6952770995241353216-n.jpg" width="400">  |
+| Surah Selection Page | <img src="https://i.ibb.co/Q9xfCV5/80385964-2711115278967611-6952770995241353216-n.jpg" width="400">  |
 | Prayer Time Display | <img src="https://i.ibb.co/pdKRncR/80669994-618893642190731-2128203221980676096-n.jpg" width="400">  |
 | Menu | <img src="https://i.ibb.co/VHLkvtT/80588446-1506371459516923-6045112837863374848-n-1.jpg" width="400">  |
 | Quran Display(Dark) | <img src="https://i.ibb.co/vwtHZsz/80006849-461845244706900-2167924333664534528-n.jpg" width="400">  |
